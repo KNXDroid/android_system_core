@@ -727,6 +727,9 @@ void DeviceHandler::HandleBindInternal(std::string driver_name, std::string acti
 }
 
 void DeviceHandler::HandleUevent(const Uevent& uevent) {
+    if (!uevent.modalias.empty()) return;
+    if (uevent.subsystem == "firmware" &&  uevent.action == "add") return;
+
     if (uevent.action == "add" || uevent.action == "change" || uevent.action == "bind" ||
         uevent.action == "online") {
         FixupSysPermissions(uevent.path, uevent.subsystem);

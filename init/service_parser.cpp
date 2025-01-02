@@ -540,6 +540,7 @@ static std::optional<const std::string> ConvertTaskFileToProfile(const std::stri
     static const std::map<const std::string, const std::string> map = {
             {"/dev/stune/top-app/tasks", "MaxPerformance"},
             {"/dev/stune/foreground/tasks", "HighPerformance"},
+            {"/dev/stune/sysui/tasks", "SysUI"},
             {"/dev/cpuset/camera-daemon/tasks", "CameraServiceCapacity"},
             {"/dev/cpuset/foreground/tasks", "ProcessCapacityHigh"},
             {"/dev/cpuset/system-background/tasks", "ServiceCapacityLow"},

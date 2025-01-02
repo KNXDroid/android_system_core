@@ -208,6 +208,18 @@ on init
     write /dev/cpuctl/nnapi-hal/cpu.uclamp.min 1
     write /dev/cpuctl/nnapi-hal/cpu.uclamp.latency_sensitive 1
 
+    # Create a cpu group for UI processes
+    mkdir /dev/cpuctl/sysui
+    chown system system /dev/cpuctl/sysui
+    chown system system /dev/cpuctl/sysui/tasks
+    chown system system /dev/cpuctl/sysui/cgroup.procs
+    chmod 0664 /dev/cpuctl/sysui/tasks
+    chmod 0664 /dev/cpuctl/sysui/cgroup.procs
+    write /dev/cpuctl/sysui/cpu.shares 4096
+    write /dev/cpuctl/sysui/cpu.uclamp.min 30
+    write /dev/cpuctl/sysui/cpu.uclamp.max 100
+    write /dev/cpuctl/sysui/cpu.uclamp.latency_sensitive 1
+
     # Create a cpu group for camera daemon processes
     mkdir /dev/cpuctl/camera-daemon
     chown system system /dev/cpuctl/camera-daemon

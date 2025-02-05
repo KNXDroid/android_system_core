@@ -163,19 +163,6 @@
         }
       ]
     },
-      {
-      "Name": "SysUI",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "cpu",
-            "Path": "sysui"
-          }
-        }
-      ]
-    },
     {
       "Name": "HighPerformanceWI",
       "Actions": [

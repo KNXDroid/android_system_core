@@ -156,8 +156,7 @@ bool CgroupGetAttributePathForTask(const std::string& attr_name, pid_t tid, std:
 }
 
 bool UsePerAppMemcg() {
-    bool low_ram_device = GetBoolProperty("ro.config.low_ram", false);
-    return GetBoolProperty("ro.config.per_app_memcg", low_ram_device);
+    return true;
 }
 
 static bool isMemoryCgroupSupported() {
